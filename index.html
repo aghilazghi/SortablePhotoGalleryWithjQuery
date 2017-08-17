@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Animal Photo Gallery</title>
+		<meta id="viewport" name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox-1.3.4.css" />
+		<link rel="stylesheet" type="text/css" href="css/gallery.css" />
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="fancybox/jquery.fancybox-1.3.4.js"></script>
+		<script type="text/javascript" src="js/gallery.js"></script>
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<link rel="stylesheet" type="text/css" href="css/gallery_ie.css" />
+		<! [endif] -->
+	</head>
+	<body>
+		<img src="images/background.jpg" alt="background image" class="background" />
+		<div class="title"></div>
+		<div class="gallery">
+			<div class="sorting">
+				<div>
+					<span>Sort Photos By:</span>
+					<a href="#" class="sortLink selected" data-keyword="all">All Animals</a>
+					<a href="#" class="sortLink selected" data-keyword="africa">Africa</a>
+					<a href="#" class="sortLink selected" data-keyword="asia">Asia</a>
+					<a href="#" class="sortLink selected" data-keyword="australia">Australia</a>
+					<a href="#" class="sortLink selected" data-keyword="europe">Europe</a>
+					<a href="#" class="sortLink selected" data-keyword="northamerica">North America</a>
+					<a href="#" class="sortLink selected" data-keyword="southamerica">South America</a>
+					<div class="clear_both"></div>
+				</div>
+			</div>
+			<div class="photos">
+				<div class="thumbnail_container">
+					<a href="images/eagle.jpg" title="Bald Eagle" class="thumbnail" data-keywords="northamerica">
+						<img src="images/eagle_thumbnail.jpg" alt="Bald Eagle" /></a>
+					</a>
+					<a href="images/elephant.jpg" title="Elephant" class="thumbnail" data-keywords="africa asia">
+						<img src="images/elephant_thumbnail.jpg" alt="Elephant" /></a>
+					</a>
+					<a href="images/fox.jpg" title="Red Fox" class="thumbnail" data-keywords="nothamerica europe asia">
+						<img src="images/fox_thumbnail.jpg" alt="Red Fox" /></a>
+					</a>
+					<a href="images/giraffe.jpg" title="Giraffe" class="thumbnail" data-keywords="africa">
+						<img src="images/giraffe_thumbnail.jpg" alt="Giraffe" /></a>
+					</a>
+					<a href="images/kangaroo.jpg" title="Kangaroo" class="thumbnail" data-keywords="australia">
+						<img src="images/kangaroo_thumbnail.jpg" alt="Kangaroo" /></a>
+					</a>
+					<a href="images/lioness.jpg" title="Lioness" class="thumbnail" data-keywords="africa asia">
+						<img src="images/lioness_thumbnail.jpg" alt="Lioness" /></a>
+					</a>
+					<a href="images/llama.jpg" title="Llama" class="thumbnail" data-keywords="southamerica">
+						<img src="images/llama_thumbnail.jpg" alt="Llama" /></a>
+					</a>
+					<a href="images/tiger.jpg" title="Tiger" class="thumbnail" data-keywords="asia">
+						<img src="images/tiger_thumbnail.jpg" alt="Tiger" /></a>
+					</a>
+					<a href="images/wolf.jpg" title="Wolf" class="thumbnail" data-keywords="northamerica europe">
+						<img src="images/wolf_thumbnail.jpg" alt="Wolf" /></a>
+					</a>
+					<a href="images/zebra.jpg" title="Zebra" class="thumbnail" data-keywords="africa">
+						<img src="images/zebra_thumbnail.jpg" alt="Zebra" /></a>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="debug-size" style="position:absolute; bottom:0px; left:12px;">debug size</div>
+		<div class="debug-remainder" style="position:absolute; bottom:25px; left:12px;">debug remainder</div>
+
+		
+	</body>
+</html>
