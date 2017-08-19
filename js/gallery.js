@@ -8,7 +8,7 @@ $(document).ready(function(){
         sortThumbnails(keyword);
     });
     $('.gallery .sorting').css('margin-bottom', window.thumbnailSpacing + 'px');
-    $('.thumbnail_container a.thumbnail').addClass('showMe');
+    $('.thumbnail_container a.thumbnail').addClass('showMe').addClass('fancybox').attr('rel', 'group');
 
     positionThumbnail();
     setInterval('checkViewport()', 750);
@@ -36,12 +36,12 @@ function sortThumbnails(keyword){
         var thumbnailKeywords = $(this).attr('data-keywords');
 
         if(keyword == 'all'){
-            $(this).addClass('showMe').removeClass('hideMe');
+            $(this).addClass('showMe').removeClass('hideMe').attr('rel', 'group');
         } else {
             if(thumbnailKeywords.indexOf(keyword) != -1) {
-                $(this).addClass('showMe').removeClass('hideMe');
+                $(this).addClass('showMe').removeClass('hideMe').attr('rel', 'group');
             } else {
-                $(this).addClass('hideMe').removeClass('showMe');                
+                $(this).addClass('hideMe').removeClass('showMe').attr('rel', 'none');                
             }
         }
     });
@@ -91,8 +91,30 @@ function positionThumbnail() {
         });
     });
 
+    detectFancyboxLinks();
+
     var sortingWidth = $('.thumbnail_container').width() / thumbnailWidth;
     var newWidth = sortingWidth * thumbnailWidth - window.thumbnailSpacing;
     $('.sorting').css('width', newWidth + 'px');
 }
 
+function detectFancyboxLinks() {
+
+    $('a.fancybox').unbind('click.fb');
+
+    if($(window).width() < 550) {
+        $('.thumbnail_container a.thumbnail').removeClass('fancybox').attr('target', '_blank');
+    } else {
+        $('.thumbnail_container a.thumbnail').removeAttr('target');
+    }
+
+    $('a.fancybox[rel="group"]').fancybox({
+        'transitionIn' : 'elastic',
+        'transitionOut' : 'elastic',
+        'titlePostion' : 'over',
+        'speedIn' : 500,
+        'overlayColor' : '#000',
+        'padding' : 0,
+        'overlayOpacity' : .75
+    })
+}
