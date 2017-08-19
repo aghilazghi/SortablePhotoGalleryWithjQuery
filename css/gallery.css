@@ -67,7 +67,6 @@ a, a:visited {
 
 .gallery .photos .thumbnail_container {
     position: relative;
-    background-color: #777;
 }
 
 .gallery .photos .thumbnail_container a.thumbnail {
